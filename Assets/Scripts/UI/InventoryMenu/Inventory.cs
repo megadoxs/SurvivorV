@@ -37,12 +37,15 @@ public class Inventory : MenuSwitcher, IPlayerDataSaver
         foreach (var item in slots) Destroy(item);
         slots.Clear();
 
-        foreach (var i in items)
+        for (var index = 0; index < items.Count; index++)
         {
             var newPanel = Instantiate(item, inventoryPannel.transform);
             var slot = newPanel.GetComponent<DragItemSlot>();
-            slot.SetItemStack(i);
+
+            slot.SetItemStack(items[index]);
+            slot.SetItemStackIndex(index);
             slot.inventory = inventoryMenu;
+
             slots.Add(newPanel);
         }
     }
@@ -70,6 +73,9 @@ public class Inventory : MenuSwitcher, IPlayerDataSaver
 
     public void LoadData(PlayerData data)
     {
+        foreach (var item in slots) Destroy(item);
+        slots.Clear();
+        items.Clear();
         AddItems(ItemStackData.GetItemStacks(data.items));
     }
 

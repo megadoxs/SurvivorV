@@ -27,7 +27,7 @@ public class SaveMenu : MonoBehaviour
             saveSlots.ForEach(self => Destroy(self));
         saveSlots = new List<GameObject>();
         
-        foreach (var save in GameDataManager.instance.GetAllSaves())
+        foreach (var save in GameDataManager.GetAllSaves())
         {
             saves.Add(save);
             var saveObject = Instantiate(savePrefab, saveList.transform);

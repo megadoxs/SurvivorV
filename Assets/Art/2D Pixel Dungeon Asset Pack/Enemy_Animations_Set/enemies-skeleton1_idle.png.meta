@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemies-skeleton1_idle_0: -510194180926327622
+      enemies-skeleton1_idle_1: -7148033356025965787
+      enemies-skeleton1_idle_2: 4621585145735685512
+      enemies-skeleton1_idle_3: 7781542403348788821
+      enemies-skeleton1_idle_4: 3229803179337962931
+      enemies-skeleton1_idle_5: 1462905188528721055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

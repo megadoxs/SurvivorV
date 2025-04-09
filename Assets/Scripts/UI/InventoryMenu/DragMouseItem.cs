@@ -23,7 +23,7 @@ public class DragMouseItem : MonoBehaviour //TODO rename to MouseItemSlot
             GameObject pickupItem = Instantiate(prefab, GameObject.FindWithTag("Player").transform.position, Quaternion.identity);
             pickupItem.GetComponent<PickupItem>().SetItemStack(itemStack);
             pickupItem.GetComponent<PickupItem>().playerInside = true;
-            itemDrag.GetComponent<DragItemSlot>().deleteItem();
+            itemDrag.GetComponent<DragItemSlot>().DeleteItem();
             Destroy(itemDrag);
             Destroy(gameObject);
         }

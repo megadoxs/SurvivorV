@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemies-vampire_idle_0: -371990891160990251
+      enemies-vampire_idle_1: -2674972448465584468
+      enemies-vampire_idle_2: 8789874126356521907
+      enemies-vampire_idle_3: -3127965267752196778
+      enemies-vampire_idle_4: -2148743222624937830
+      enemies-vampire_idle_5: -3865281036853105448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

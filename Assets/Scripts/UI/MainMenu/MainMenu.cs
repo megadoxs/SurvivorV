@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        if (GameDataManager.instance.GetLatestSave() == null)
+        if (GameDataManager.GetLatestSave() == null)
             resumeButton.SetActive(false);
     }
 
@@ -46,7 +46,7 @@ public class MainMenu : MonoBehaviour
     public void LoadLatestGame()
     {
         Fade.state = true;
-        StartCoroutine(LoadGameCoroutine(GameDataManager.instance.GetLatestSave()));
+        StartCoroutine(LoadGameCoroutine(GameDataManager.GetLatestSave()));
     }
 
     public void LoadGame(string save)

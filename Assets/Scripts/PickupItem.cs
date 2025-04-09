@@ -17,9 +17,9 @@ public class PickupItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!playerInside)
+        if (!playerInside && other.CompareTag("Player"))
         {
-            Inventory.items.Add(itemStack);
+            GameObject.FindWithTag("Player").GetComponent<Inventory>().AddItem(itemStack);
             Destroy(gameObject);
         }
     }

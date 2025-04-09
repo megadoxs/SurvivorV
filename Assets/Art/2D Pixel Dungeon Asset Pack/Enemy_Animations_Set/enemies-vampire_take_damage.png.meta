@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemies-vampire_take_damage_0: 5383943641330387617
+      enemies-vampire_take_damage_1: 3201313717820641302
+      enemies-vampire_take_damage_2: -6389433042752277861
+      enemies-vampire_take_damage_3: 1173586683966709683
+      enemies-vampire_take_damage_4: 1299983899940442222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemies-skeleton1_attack_0: -8054786874749993974
+      enemies-skeleton1_attack_1: -3274211184180418968
+      enemies-skeleton1_attack_2: -2071073656593590071
+      enemies-skeleton1_attack_3: -4085372662798452815
+      enemies-skeleton1_attack_4: 5208519347372511414
+      enemies-skeleton1_attack_5: -3142435057486016877
+      enemies-skeleton1_attack_6: -2637764417314834933
+      enemies-skeleton1_attack_7: 579105167017132205
+      enemies-skeleton1_attack_8: -1791478280210362034
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

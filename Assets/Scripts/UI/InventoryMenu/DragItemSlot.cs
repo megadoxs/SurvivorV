@@ -19,6 +19,7 @@ public class DragItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler, IP
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI itemCount;
     private ItemStack itemStack;
+    private int index;
 
     private int totalChild;
 
@@ -89,11 +90,16 @@ public class DragItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler, IP
         this.itemStack = itemStack;
         image.sprite = itemStack.GetItem().GetSprite();
         itemName.text = itemStack.GetItem().GetName();
-        itemCount.text = "x" + itemStack.GetCount().ToString();
+        itemCount.text = "x" + itemStack.GetCount();
     }
 
-    public void deleteItem() //TODO doesn't work when dragged to a new position
+    public void SetItemStackIndex(int index)
     {
-        Inventory.items.RemoveAt(currentTransform.GetSiblingIndex());
+        this.index = index;
+    }
+
+    public void DeleteItem() //TODO doesn't work when dragged to a new position
+    {
+        Inventory.items.RemoveAt(index);
     }
 }

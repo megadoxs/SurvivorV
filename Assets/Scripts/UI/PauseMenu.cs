@@ -59,7 +59,6 @@ public class PauseMenu : MenuSwitcher //TODO use menuSwitcher if possible to rem
     public void MainMenu()
     {
         Fade.state = true;
-        Time.timeScale = 1;
         StartCoroutine(LoadMainMenu());
     }
     
@@ -69,6 +68,7 @@ public class PauseMenu : MenuSwitcher //TODO use menuSwitcher if possible to rem
         GameDataManager.instance.LoadScene("MainMenuScene");
         pauseMenu.SetActive(false);
         isPaused = false;
+        Time.timeScale = 1;
         gameMenu.SetActive(true);
         settingsMenu.SetActive(false);
         Reset();

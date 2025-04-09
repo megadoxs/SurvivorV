@@ -31,6 +31,7 @@ public class Teleporter : MonoBehaviour
                 player.GetComponent<PlayerController>().LockMovement();
                 teleporter = index;
                 Fade.state = true;
+                Time.timeScale = 0;
                 StartCoroutine(Teleport());
             }
     }
@@ -40,6 +41,7 @@ public class Teleporter : MonoBehaviour
         //waits for fade in
         yield return new WaitUntil(() => Fade.Done());
         //loads new scene
+        Time.timeScale = 1;
         GameDataManager.instance.LoadScene(scene.name);
         SceneManager.sceneLoaded += OnLoadScene;
         //start fade out

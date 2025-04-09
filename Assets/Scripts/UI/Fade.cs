@@ -20,9 +20,9 @@ public class Fade : MonoBehaviour
     void Update()
     {
         if(state && canvasGroup.alpha < 1)
-            canvasGroup.alpha += Time.deltaTime / timeToFade;
+            canvasGroup.alpha += Time.unscaledDeltaTime / timeToFade;
         else if (!state && canvasGroup.alpha > 0)
-            canvasGroup.alpha -= Time.deltaTime / timeToFade;
+            canvasGroup.alpha -= Time.unscaledDeltaTime / timeToFade;
     }
 
     public static bool Done()

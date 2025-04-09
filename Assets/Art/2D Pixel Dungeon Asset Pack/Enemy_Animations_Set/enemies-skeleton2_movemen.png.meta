@@ -372,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemies-skeleton2_movemen_0: -3453593295771101950
+      enemies-skeleton2_movemen_1: 7070040378066871320
+      enemies-skeleton2_movemen_2: -6090139221196928375
+      enemies-skeleton2_movemen_3: 6804669694922606304
+      enemies-skeleton2_movemen_4: -2924459975164969070
+      enemies-skeleton2_movemen_5: -1374759769140421280
+      enemies-skeleton2_movemen_6: -2913710570779611305
+      enemies-skeleton2_movemen_7: 6631110553749174946
+      enemies-skeleton2_movemen_8: -2944586903476300849
+      enemies-skeleton2_movemen_9: -4030749054869508691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -23,27 +23,33 @@ public class GameDataManager : MonoBehaviour
     public void LoadScene(string scene) //to ensure data is saved, loadScene should be called here
     {
         var currentScene = SceneManager.GetActiveScene();
-        BeforeSceneUnload(currentScene);
+        BeforeSceneUnload(currentScene, scene);
         SceneManager.LoadScene(scene);
     }
 
-    private void BeforeSceneUnload(Scene scene) //saves old scene data
+    public void LoadGameScene(string scene)
     {
-        if (scene.buildIndex == 0)
+        foreach (var saver in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IPlayerDataSaver>())
         {
-            foreach (var saver in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IPlayerDataSaver>())
-            {
-                saver.LoadData(playerData);
-            }
-            Collider2D player = GameObject.FindWithTag("Player").GetComponent<Collider2D>();
-            CinemachineCamera virtualCam = FindFirstObjectByType<CinemachineCamera>();
-            virtualCam.PreviousStateIsValid = false;
-            virtualCam.transform.position = player.transform.position;
-            Fade.state = false;
-            return;
+            saver.LoadData(playerData);
+        }
+        Collider2D player = GameObject.FindWithTag("Player").GetComponent<Collider2D>();
+        CinemachineCamera virtualCam = FindFirstObjectByType<CinemachineCamera>();
+        virtualCam.PreviousStateIsValid = false;
+        virtualCam.transform.position = player.transform.position;
+        Fade.state = false;
+        SceneManager.LoadScene(scene);
+    }
+
+    private void BeforeSceneUnload(Scene oldScene, string newScene) //saves old scene data
+    {
+        if (newScene != null && newScene.Equals("MainMenuScene"))
+        {
+            SavePlayer(oldScene.name);
+            SceneManager.sceneLoaded -= OnLoadScene;
         }
         
-        switch (scene.name)
+        switch (oldScene.name)
         {
             case "DungeonScene":
             {
@@ -71,13 +77,7 @@ public class GameDataManager : MonoBehaviour
         if (scene.buildIndex == 0)
             return;
         
-        foreach (var saver in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IPlayerDataSaver>())
-        {
-            saver.SaveData(ref playerData);
-        }
-        playerData.sceneName = SceneManager.GetActiveScene().name;
-        fileDataHandler.SavePlayerData(playerData);
-
+        SavePlayer(SceneManager.GetActiveScene().name);
         switch (scene.name)
         {
             case "DungeonScene":
@@ -98,6 +98,16 @@ public class GameDataManager : MonoBehaviour
             }
         }
     }
+    
+    private void SavePlayer(string sceneName)
+    {
+        foreach (var saver in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IPlayerDataSaver>())
+        {
+            saver.SaveData(ref playerData);
+        }
+        playerData.sceneName = sceneName;
+        fileDataHandler.SavePlayerData(playerData);
+    }
 
     public void NewGame(string saveName)
     {
@@ -106,7 +116,7 @@ public class GameDataManager : MonoBehaviour
         worldData = new WorldData();
 
         fileDataHandler = new FileDataHandler(saveName);
-        LoadScene(playerData.sceneName);
+        LoadGameScene(playerData.sceneName);
     }
 
     public void LoadGame(string saveName)
@@ -120,33 +130,28 @@ public class GameDataManager : MonoBehaviour
         if(playerData == null) //temp
             NewGame(saveName);
         else
-            LoadScene(playerData.sceneName);
+            LoadGameScene(playerData.sceneName);
     }
 
     public void SaveGame() //save current scene + player 
     {
-        BeforeSceneUnload(SceneManager.GetActiveScene());
-        foreach (var saver in FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IPlayerDataSaver>())
-        {
-            saver.SaveData(ref playerData);
-        }
-        playerData.sceneName = SceneManager.GetActiveScene().name;
-        fileDataHandler.SavePlayerData(playerData);
+        BeforeSceneUnload(SceneManager.GetActiveScene(), null);
+        SavePlayer(SceneManager.GetActiveScene().name);
     }
 
-    public List<string> GetAllSaves()
+    public static List<string> GetAllSaves()
     {
         return new FileDataHandler().GetAllSaves();
+    }
+    
+    public static string GetLatestSave()
+    {
+        return new FileDataHandler().GetLatestSave();
     }
 
     private void OnApplicationQuit()
     {
-        if(SceneManager.GetActiveScene().buildIndex != 0)
-         SaveGame();
-    }
-
-    public string GetLatestSave()
-    {
-        return new FileDataHandler().GetLatestSave();
+        if(SceneManager.GetActiveScene().buildIndex != 0) 
+            SaveGame();
     }
 }
