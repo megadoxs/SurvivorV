@@ -11,8 +11,8 @@ public class PickupItem : MonoBehaviour
     public void SetItemStack(ItemStack itemStack)
     {
         this.itemStack = itemStack;
-        image.sprite = itemStack.GetItem().GetSprite();
-        text.text = $"{itemStack.GetItem().GetName()}({itemStack.GetCount()})";
+        image.sprite = itemStack.GetItem().Icon;
+        text.text = $"{itemStack.GetItem().Name}({itemStack.GetCount()})";
     }
 
     private void OnTriggerEnter2D(Collider2D other)

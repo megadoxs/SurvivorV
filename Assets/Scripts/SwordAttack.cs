@@ -60,6 +60,12 @@ public class SwordAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Enemy"))
-            collider.GetComponent<Enemy>().Damage(1f);
+        {
+            var entity = collider.GetComponent<Entity>();
+            entity.Damage(1f, transform.parent);
+            entity.Knockback(transform.parent, 1f);
+        }
+        else if (collider.CompareTag("Destructible"))
+            collider.GetComponent<Destructible>().Destroy();
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 using TMPro; // using text mesh for the clock display
 
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal; // used to access the volume component
+using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement; // used to access the volume component
 
 public class DayNightScript : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class DayNightScript : MonoBehaviour
         CalcTime();
     }
 
-    public void CalcTime() // Used to calculate sec, min and hours
+    private void CalcTime() // Used to calculate sec, min and hours
     {
         seconds += Time.fixedDeltaTime * tick; // multiply time between fixed update by tick
 
@@ -52,8 +53,10 @@ public class DayNightScript : MonoBehaviour
         ControlPPV(); // changes post processing volume after calculation
     }
 
-    public void ControlPPV() // used to adjust the post processing slider.
+    private void ControlPPV() // used to adjust the post processing slider.
     {
+        if(SceneManager.GetActiveScene().buildIndex != 2) return;
+        
         //ppv.weight = 0;
         if (hours >= 21 && hours < 22) // dusk at 21:00 / 9pm    -   until 22:00 / 10pm
         {

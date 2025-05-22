@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d4342280d54c419512cf4e33b3fcff, type: 3}
+  m_Name: slime
+  m_EditorClassIdentifier: 
+  Name: Slime
+  Description: A drop from a slime
+  Icon: {fileID: 21300000, guid: 2018971bcb34ef64fb85c3b8cbdf6217, type: 3}
+  MaxStackSize: 100

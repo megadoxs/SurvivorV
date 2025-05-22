@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Spike
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -2998837615283745097, guid: 60929beb78db7714b8d0fcceb9fe3736, type: 3}
+  - {fileID: 4855136594817860659, guid: 583d8bb0cd17ad84f8f0f70a6d406c77, type: 3}
+  - {fileID: 5646098887615476121, guid: 2b276ab72c775d9429113c90adb9b706, type: 3}
+  - {fileID: -7314021976184856259, guid: 588b8f84c3b140a4183462e79cd52e95, type: 3}
+  - {fileID: 5646098887615476121, guid: 2b276ab72c775d9429113c90adb9b706, type: 3}
+  - {fileID: 4855136594817860659, guid: 583d8bb0cd17ad84f8f0f70a6d406c77, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0

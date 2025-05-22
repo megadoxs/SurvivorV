@@ -11,16 +11,22 @@ public class NewGameMenu : MonoBehaviour
 
     public void NewGame()
     {
-        var input = inputField.text; //TODO should create a name for an empty input
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        var input = inputField.text;
+        
+        if (input.Length == 0)
+            input = "New Game";
+        
         Fade.state = true;
-        StartCoroutine(NewGameCoroutine(inputField.text));
+        StartCoroutine(NewGameCoroutine(input));
     }
     
     private IEnumerator NewGameCoroutine(string save)
     {
         yield return new WaitUntil(() => Fade.Done());
         Resources.FindObjectsOfTypeAll<PlayerController>().First().gameObject.SetActive(true);
-        GameDataManager.instance.NewGame(save);
+        DataManager.instance.NewGame(save);
     }
 
     public void Cancel()

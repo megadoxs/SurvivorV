@@ -45,7 +45,7 @@ public class DragMouseItem : MonoBehaviour //TODO rename to MouseItemSlot
 
     public void SetItemStack(ItemStack itemStack) {
         this.itemStack = itemStack;
-        image.sprite = itemStack.GetItem().GetSprite();
+        image.sprite = itemStack.GetItem().Icon;
         itemCount.text = itemStack.GetCount().ToString();
     }
 }

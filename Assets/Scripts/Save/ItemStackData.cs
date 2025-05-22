@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [Serializable]
-public class ItemStackData
+public class ItemStackData //TODO can probably be deleted now that ItemStack is serializable
 {
     public string name;
     public int count;
@@ -15,7 +16,7 @@ public class ItemStackData
 
     public ItemStack GetItemStack()
     {
-        return new ItemStack(Items.GetItem(name), count);
+        return new ItemStack(Resources.Load<Item>("Items/" + name.ToLower().Replace(" ", "_")), count);
     }
 
     public static List<ItemStack> GetItemStacks(List<ItemStackData> items)
@@ -33,7 +34,7 @@ public class ItemStackData
         List <ItemStackData> itemStacks = new();
         foreach (var item in items)
         {
-            itemStacks.Add(new ItemStackData(item.GetItem().GetName(), item.GetCount()));
+            itemStacks.Add(new ItemStackData(item.GetItem().name, item.GetCount()));
         }
         return itemStacks;
     }

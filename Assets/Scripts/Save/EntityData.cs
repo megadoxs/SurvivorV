@@ -1,13 +1,22 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public class EntityData
 {
-    //entity Type
+    public string type;
     public Vector3 position;
-    //dictionary of property and value
+    public float health;
 
-    public EntityData()
+    public EntityData(EntitySO entity, Vector3 position, float health)
     {
-        position = Vector3.zero;
+        type = entity.name;
+        this.position = position;
+        this.health = health;
+    }
+
+    public EntitySO GetEntity()
+    {
+        return Resources.Load<EntitySO>("Monsters/" + type);
     }
 }

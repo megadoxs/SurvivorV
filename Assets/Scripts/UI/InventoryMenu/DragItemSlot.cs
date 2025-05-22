@@ -88,8 +88,8 @@ public class DragItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler, IP
     public void SetItemStack(ItemStack itemStack)
     {
         this.itemStack = itemStack;
-        image.sprite = itemStack.GetItem().GetSprite();
-        itemName.text = itemStack.GetItem().GetName();
+        image.sprite = itemStack.GetItem().Icon;
+        itemName.text = itemStack.GetItem().name;
         itemCount.text = "x" + itemStack.GetCount();
     }
 
@@ -100,6 +100,6 @@ public class DragItemSlot : MonoBehaviour, IPointerDownHandler, IDragHandler, IP
 
     public void DeleteItem() //TODO doesn't work when dragged to a new position
     {
-        Inventory.items.RemoveAt(index);
+        Inventory.instance.items.RemoveAt(index);
     }
 }

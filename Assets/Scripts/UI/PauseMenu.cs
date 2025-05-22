@@ -14,6 +14,9 @@ public class PauseMenu : MenuSwitcher //TODO use menuSwitcher if possible to rem
 
     public void OnPauseGame()
     {
+        if(GameOver.gameOver)
+            return;
+        
         if (isPaused)
         {
             ResumeGame();
@@ -65,7 +68,10 @@ public class PauseMenu : MenuSwitcher //TODO use menuSwitcher if possible to rem
     private IEnumerator LoadMainMenu()
     {
         yield return new WaitUntil(() => Fade.Done());
-        GameDataManager.instance.LoadScene("MainMenuScene");
+        GameManager.instance.LoadScene("MainMenuScene");
+        if(GameOver.gameOver)
+            GameOver.instance.gameOverMenu.SetActive(false);
+        
         pauseMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1;

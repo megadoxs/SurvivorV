@@ -1,11 +1,13 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public class ItemStack
 {
-    private readonly Item item;
+    [SerializeField]
+    private Item item;
+    [SerializeField]
     private int count;
-
-    public ItemStack(Item item): this(item, 0){}
 
     public ItemStack(Item item, int count)
     {
@@ -13,25 +15,23 @@ public class ItemStack
         this.count = count;
     }
 
-    public void SetCount(int count) //TODO care about max stack size
+    public void SetCount(int count)
     {
-        this.count = count;
+        this.count = Mathf.Min(count, item.MaxStackSize);
     }
 
-    public void addCount(int count) //TODO only keep this or addstacksize
+    public int AddStackSize(int count)
     {
-        this.count += count;
+        var toAdd = Mathf.Min(count, Mathf.Max(0, item.MaxStackSize - this.count));
+        this.count += toAdd;
+        return count - toAdd;
     }
-
-    public virtual int AddStackSize(int count)
+    
+    public int RemoveStackSize(int count)
     {
-        if (this.count < item.GetMaxStackSize())
-        {
-            int left = this.count + count - item.GetMaxStackSize();
-            this.count += count - left;
-            return left;
-        }
-        return count;
+        var toRemove = Mathf.Min(count, this.count);
+        this.count -= toRemove;
+        return count - toRemove;
     }
 
     public int GetCount()

@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592947684bab0414c81399a58513571f, type: 3}
+  m_Name: 5x5 Room
+  m_EditorClassIdentifier: 
+  description: A room where you can place a Spawner
+  sprite: {fileID: 21300000, guid: db8c2d1dbb7086143b872191975b0798, type: 3}
+  Type: 0
+  Directions: 00000000010000000200000003000000
+  Rows:
+  - Tiles:
+    - {fileID: 11400000, guid: f937be2b6e6415b46ab77a96570f0c52, type: 2}
+    - {fileID: 11400000, guid: aa0926a420ccfa7448c6fa33ee296481, type: 2}
+    - {fileID: 11400000, guid: aa0926a420ccfa7448c6fa33ee296481, type: 2}
+    - {fileID: 11400000, guid: aa0926a420ccfa7448c6fa33ee296481, type: 2}
+    - {fileID: 11400000, guid: aa0926a420ccfa7448c6fa33ee296481, type: 2}
+    - {fileID: 11400000, guid: aa0926a420ccfa7448c6fa33ee296481, type: 2}
+    - {fileID: 11400000, guid: e12312ccd5297ba43a217e98c04c3def, type: 2}
+  - Tiles:
+    - {fileID: 11400000, guid: bdaf7a5a840d07c40ad9910eb7433d49, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 1236bbfe95cd3144292196eba0275a75, type: 2}
+  - Tiles:
+    - {fileID: 11400000, guid: bdaf7a5a840d07c40ad9910eb7433d49, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 1236bbfe95cd3144292196eba0275a75, type: 2}
+  - Tiles:
+    - {fileID: 11400000, guid: bdaf7a5a840d07c40ad9910eb7433d49, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 1236bbfe95cd3144292196eba0275a75, type: 2}
+  - Tiles:
+    - {fileID: 11400000, guid: bdaf7a5a840d07c40ad9910eb7433d49, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 1236bbfe95cd3144292196eba0275a75, type: 2}
+  - Tiles:
+    - {fileID: 11400000, guid: bdaf7a5a840d07c40ad9910eb7433d49, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 23249b01083336c4bb2819c0a9d2a586, type: 2}
+    - {fileID: 11400000, guid: 1236bbfe95cd3144292196eba0275a75, type: 2}
+  - Tiles:
+    - {fileID: 11400000, guid: 3a1b0ed9964f58a4ea0404c52a48f828, type: 2}
+    - {fileID: 11400000, guid: 3e11ae973ff9e67418e35c36aa48ba31, type: 2}
+    - {fileID: 11400000, guid: 3e11ae973ff9e67418e35c36aa48ba31, type: 2}
+    - {fileID: 11400000, guid: 3e11ae973ff9e67418e35c36aa48ba31, type: 2}
+    - {fileID: 11400000, guid: 3e11ae973ff9e67418e35c36aa48ba31, type: 2}
+    - {fileID: 11400000, guid: 3e11ae973ff9e67418e35c36aa48ba31, type: 2}
+    - {fileID: 11400000, guid: ce2f8fbdd0462014db2ee5b2292a31bd, type: 2}
+  AnchorPoints:
+  - {x: 0, y: 3, z: 0}
+  - {x: 3, y: 0, z: 0}
+  - {x: 6, y: 3, z: 0}
+  - {x: 3, y: 6, z: 0}
+  cost:
+  - item: {fileID: 11400000, guid: a77fbb852611c3d409b72437623c595a, type: 2}
+    count: 10
+  - item: {fileID: 11400000, guid: 4d0311a42a11e4342a10f1c991c7ebd0, type: 2}
+    count: 30
+  - item: {fileID: 11400000, guid: ad8b0cb100f2eb940b8ec3909ff61939, type: 2}
+    count: 30

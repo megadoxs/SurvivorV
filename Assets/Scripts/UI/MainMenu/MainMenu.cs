@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        if (GameDataManager.GetLatestSave() == null)
+        if (DataManager.GetLatestSave() == null)
             resumeButton.SetActive(false);
     }
 
@@ -46,12 +46,16 @@ public class MainMenu : MonoBehaviour
     public void LoadLatestGame()
     {
         Fade.state = true;
-        StartCoroutine(LoadGameCoroutine(GameDataManager.GetLatestSave()));
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        StartCoroutine(LoadGameCoroutine(DataManager.GetLatestSave()));
     }
 
     public void LoadGame(string save)
     {
         Fade.state = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(LoadGameCoroutine(save));
     }
 
@@ -71,6 +75,6 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitUntil(() => Fade.Done());
         Resources.FindObjectsOfTypeAll<PlayerController>().First().gameObject.SetActive(true);
-        GameDataManager.instance.LoadGame(save);
+        DataManager.instance.LoadGame(save);
     }
 }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - MonsterTarget
+  - Destructible
   layers:
   - Default
   - TransparentFX
@@ -12,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Minimap
-  - 
-  - 
+  - Map
+  - Solid
+  - TilemapExportTemp
   - 
   - 
   - 
@@ -51,7 +53,7 @@ TagManager:
   - name: Collision
     uniqueID: 3727673389
     locked: 0
-  - name: Player
+  - name: Object
     uniqueID: 3527101379
     locked: 0
   - name: WalkBehind

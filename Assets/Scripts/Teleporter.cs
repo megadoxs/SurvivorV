@@ -4,7 +4,7 @@ using Unity.Cinemachine;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Teleporter : MonoBehaviour
+public class Teleporter : MonoBehaviour //TODO should take a look at rule tile gameObject, could maybe make it so that it handles the gameObject without needing to be spawned or manually placed
 {
     [SerializeField]
     private SceneAsset scene;
@@ -26,7 +26,7 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D player)
     {
-            if (player.CompareTag("Player") && !teleported)
+            if (player.CompareTag("Player") && !teleported && !(SceneManager.GetActiveScene().name.Equals("DungeonScene") && WaveManager.isWaveActive))
             {
                 player.GetComponent<PlayerController>().LockMovement();
                 teleporter = index;
@@ -42,7 +42,7 @@ public class Teleporter : MonoBehaviour
         yield return new WaitUntil(() => Fade.Done());
         //loads new scene
         Time.timeScale = 1;
-        GameDataManager.instance.LoadScene(scene.name);
+        GameManager.instance.LoadScene(scene.name);
         SceneManager.sceneLoaded += OnLoadScene;
         //start fade out
         Fade.state = false;
